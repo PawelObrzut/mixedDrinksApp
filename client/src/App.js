@@ -37,7 +37,7 @@ function App() {
 
   return (
     <>
-      <h1>Show me the way to the next WhiskeyBar</h1>
+      <h1 className="mainTitle">&gt;&gt;&gt; Show me the way to the next WhiskeyBar &lt;&lt;&lt; </h1>
       <Routes>
         <Route path="/" element={<Home coctail={coctail} />}></Route>
         <Route path="/favourites" element={<Favourites />}></Route>

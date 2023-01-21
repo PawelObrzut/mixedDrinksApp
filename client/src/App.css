@@ -1,0 +1,51 @@
+:root {
+  --black: #02171b;
+  --dark-green: #074d50;
+  --green: #1d635c;
+  --turquoise: #14e7c6;
+  --white: #daede9;
+}
+
+body {
+  background: linear-gradient(90deg, var(--black), var(--dark-green));
+  color: var(--turquoise);
+}
+
+.mainTitle {
+  text-align: center;
+  color: #fff;
+  text-shadow:  0 0 0.25em rgb(197 253 242 / 75%), 0 0 0.125em #7ed4d4;;
+}
+
+/* 
+* Drink component
+*/
+.drinkContainer {
+  display: flex;
+  margin: 2rem 4rem;
+  border: solid 0.5rem var(--white);
+  border-radius: 1rem;
+}
+
+.drinkImage {
+  margin: 2rem;
+  width: 35%;
+  border-radius: 50%;
+  border: solid 0.25rem var(--white);
+  object-fit: cover;
+}
+
+.drinkTitleWrapper {
+  padding: 1rem 1.5rem 1.5rem 1.5rem;
+  margin-right: 2rem;
+  background-color: var(--black);
+  border-radius: 0.5rem;
+}
+
+.drinkTitleText {
+  border: dotted 0.2rem var(--turquoise);
+}
+
+.drinkTitleText h4 {
+  color: var(--white);
+}
