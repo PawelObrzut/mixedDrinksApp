@@ -1,11 +1,12 @@
 import React from 'react';
 
 export default function Home({ coctail }) {
+  console.log(coctail)
   return (
     <section>
       <article className="drinkContainer">
         <img className="drinkImage" src={coctail.img} alt={coctail.name} />
-        <div class="">
+        <div>
           <h3 className="drinkTitleWrapper">
             <fieldset className="drinkTitleText">
               <legend>Cocktail name:</legend>
@@ -14,18 +15,11 @@ export default function Home({ coctail }) {
           </h3>
           <p>{coctail.instructions}</p>
           <ul>
-            <li>
-              Ice
-            </li>
-            <li>
-              Lime
-            </li>
-            <li>
-              Sugar
-            </li>
+           {coctail?.ingredients?.map(ingredient => (
+            <li>{ingredient}</li>
+           ))}
           </ul>
           <button>Save To Favourites</button>
-          <button>Share</button>
         </div>
       </article>
     </section>
