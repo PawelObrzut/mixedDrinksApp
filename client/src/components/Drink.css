@@ -11,7 +11,7 @@
 }
 
 .drinkImage {
-  margin: 2rem;
+  margin: auto 2rem;
   width: 35%;
   height: 35%;
   border-radius: 50%;
@@ -31,5 +31,15 @@
 }
 
 .drinkTitleText h4 {
+  font-size: 2rem;
+  margin: 0.5rem;
   color: var(--white);
+}
+
+.extraFont {
+  font-size: 1.5rem;
+}
+
+.instructions {
+  margin-right: 2rem;
 }

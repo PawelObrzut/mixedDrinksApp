@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Ceviche+One&display=swap');
 :root {
   --black: #02171b;
   --dark-green: #074d50;
@@ -9,17 +10,24 @@
 body {
   background: linear-gradient(90deg, var(--black), var(--dark-green));
   color: var(--turquoise);
+  font-family: 'Ceviche One', cursive;
 }
 
 .mainTitle {
+  font-size: 3rem;
   text-align: center;
   color: #fff;
-  text-shadow:  0 0 0.25em rgb(197 253 242 / 75%), 0 0 0.125em #7ed4d4;;
+  text-shadow:  0 0 0.25em rgb(197 253 242 / 75%), 0 0 0.125em #7ed4d4;
 }
 
 /* 
 * HomePage
 */
+
+.console {
+  width:75%;
+  margin: auto;
+}
 
 .homePageMain {
   text-align: center;
@@ -27,4 +35,28 @@ body {
 
 .button {
   padding: 1rem;
+  background-color: var(--black);
+  color: var(--turquoise);
+  border: solid 0.1rem var(--white);
+  cursor: pointer;;
+}
+
+.button:hover {
+  text-shadow:  0 0 0.25em rgb(197 253 242 / 75%), 0 0 0.125em #7ed4d4;
+  text-decoration: underline;
+}
+
+.float-left {
+  float: left;
+}
+
+.float-right {
+  float: right;
+}
+
+.searchField {
+  height: 2.85rem;
+  font-size: 1.25rem;
+  padding-left: 1rem;
+  font-family: 'Ceviche One', cursive;
 }

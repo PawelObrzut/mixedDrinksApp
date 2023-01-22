@@ -2,7 +2,7 @@ import React from 'react';
 import './Drink.css';
 
 const Drink = ({ coctail}) => (
-    <article className="drinkContainer">
+  <article className="drinkContainer">
     <img className="drinkImage" src={coctail.img} alt={coctail.name} />
     <div>
       <h3 className="drinkTitleWrapper">
@@ -11,8 +11,8 @@ const Drink = ({ coctail}) => (
           <h4>{coctail.name}</h4>
         </fieldset>
       </h3>
-      <p>{coctail.instructions}</p>
-      <ul>
+      <p className="extraFont instructions">{coctail.instructions}</p>
+      <ul className="extraFont">
        {coctail?.ingredients?.map(ingredient => <li key={ingredient}>{ingredient}</li>)}
       </ul>
       <button className="button">Save To Favourites</button>

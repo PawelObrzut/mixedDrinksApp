@@ -14,9 +14,11 @@ export default function Home({ coctail, getDrink, getDrinkByName }) {
   
   return (
     <main className="homePageMain">
-      <button onClick={handleGetRandom} className="button">Get a Random Drink</button>
-      <input ref={searchQuerry} type="text" placeholder="search by name"></input>
-      <button onClick={handleSearchorDrink} className="button">Find</button>
+      <section className="console">
+        <button onClick={handleGetRandom} className="button float-left">Get a Random Drink</button>
+        <button onClick={handleSearchorDrink} className="button float-right">Find</button>
+        <input ref={searchQuerry} type="text" className="searchField float-right" placeholder="search by name"></input>
+      </section>
       <Drink coctail={coctail} />
     </main>
   )
