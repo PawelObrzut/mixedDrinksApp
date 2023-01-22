@@ -2,8 +2,11 @@ const express = require('express');
 const app = express();
 const cors = require('cors');
 const axios = require('axios');
+const bodyParser = require('body-parser');
+const { saveDrink, getDrinks, deleteDrink } = require('./mongo-connection');
 
 app.use(cors());
+app.use(bodyParser.json());
 
 app.get('/', (req, res) => {
   res.send('Try /api/drink/ endpoint');
@@ -34,6 +37,25 @@ app.get('/api/drink/:name', async (req, res) => {
     return res.status(404).send({message: 'coctail not found'});
   }
 })
+
+app.get('/api/favourites', async (req, res) => {
+  const drinksColl = await getDrinks();
+  res
+    .json(drinksColl);
+});
+
+app.post('/api/favourites', async (req, res) => {
+  await saveDrink(req.body);
+  res
+    .send({message : 'Saved'});
+});
+
+app.delete('/api/favourites/:id', async (req, res) => {
+  const idToRemove = req.url.split('/')[3]
+  await deleteDrink(idToRemove);
+  res
+    .send({message: 'Done'});
+});
 
 const port = process.env.PORT || 8080;
 
