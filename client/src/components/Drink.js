@@ -1,7 +1,7 @@
 import React from 'react';
 import './Drink.css';
 
-const Drink = ({ coctail}) => (
+const Drink = ({ coctail }) => (
   <article className="drinkContainer">
     <img className="drinkImage" src={coctail.img} alt={coctail.name} />
     <div>
@@ -15,7 +15,7 @@ const Drink = ({ coctail}) => (
       <ul className="extraFont">
        {coctail?.ingredients?.map(ingredient => <li key={ingredient}>{ingredient}</li>)}
       </ul>
-      <button className="button">Save To Favourites</button>
+      { coctail.success && <button className="button">Save To Favourites</button> }
     </div>
   </article>
   );

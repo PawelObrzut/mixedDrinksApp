@@ -12,8 +12,8 @@
 
 .drinkImage {
   margin: auto 2rem;
-  width: 35%;
-  height: 35%;
+  width: 20rem;
+  height: 20rem;
   border-radius: 50%;
   border: solid 0.25rem var(--white);
   object-fit: cover;

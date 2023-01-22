@@ -13,12 +13,12 @@ app.get('/api/drink', (req, res) => {
   try {
     axios.get('https://www.thecocktaildb.com/api/json/v1/1/random.php')
       .then(response => {      
-        res
+        return res
           .status(200)
           .json(response.data.drinks[0]);
       });
-  } catch (err) {
-    res.status(500).json({message: "Internal error"})
+  } catch (error) {
+    return res.status(500).json({message: "Internal error"})
   }
 });
 
@@ -31,7 +31,7 @@ app.get('/api/drink/:name', async (req, res) => {
     }
     return res.json(response.data.drinks[0]);
   } catch (error) {
-    return res.status(404).end();
+    return res.status(404).send({message: 'coctail not found'});
   }
 })
 
