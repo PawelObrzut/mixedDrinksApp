@@ -1,0 +1,35 @@
+/* 
+* Drink component
+*/
+.drinkContainer {
+  text-align: left;
+  width: 80%;
+  margin: 1rem auto;
+  display: flex;
+  border: solid 0.5rem var(--white);
+  border-radius: 1rem;
+}
+
+.drinkImage {
+  margin: 2rem;
+  width: 35%;
+  height: 35%;
+  border-radius: 50%;
+  border: solid 0.25rem var(--white);
+  object-fit: cover;
+}
+
+.drinkTitleWrapper {
+  padding: 1rem 1.5rem 1.5rem 1.5rem;
+  margin-right: 2rem;
+  background-color: var(--black);
+  border-radius: 0.5rem;
+}
+
+.drinkTitleText {
+  border: dotted 0.2rem var(--turquoise);
+}
+
+.drinkTitleText h4 {
+  color: var(--white);
+}

@@ -18,34 +18,13 @@ body {
 }
 
 /* 
-* Drink component
+* HomePage
 */
-.drinkContainer {
-  display: flex;
-  margin: 2rem 4rem;
-  border: solid 0.5rem var(--white);
-  border-radius: 1rem;
+
+.homePageMain {
+  text-align: center;
 }
 
-.drinkImage {
-  margin: 2rem;
-  width: 35%;
-  border-radius: 50%;
-  border: solid 0.25rem var(--white);
-  object-fit: cover;
-}
-
-.drinkTitleWrapper {
-  padding: 1rem 1.5rem 1.5rem 1.5rem;
-  margin-right: 2rem;
-  background-color: var(--black);
-  border-radius: 0.5rem;
-}
-
-.drinkTitleText {
-  border: dotted 0.2rem var(--turquoise);
-}
-
-.drinkTitleText h4 {
-  color: var(--white);
+.button {
+  padding: 1rem;
 }

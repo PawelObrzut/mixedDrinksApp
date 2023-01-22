@@ -22,6 +22,20 @@ app.get('/api/drink', (req, res) => {
   }
 });
 
+app.get('/api/drink/:name', async (req, res) => {
+  const name = req.url.split('/')[3]
+  try {
+    const response = await axios.get(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${name}`);
+    if (!response.data.drinks[0]) {
+      throw new Error();
+    }
+    return res.json(response.data.drinks[0]);
+
+  } catch (error) {
+    return res.status(404).end();
+  }
+})
+
 const port = process.env.PORT || 8080;
 
 app.listen(port, () => {

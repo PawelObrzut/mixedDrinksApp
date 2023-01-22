@@ -1,27 +1,23 @@
-import React from 'react';
+import React, { useRef } from 'react';
+import Drink from '../components/Drink';
 
-export default function Home({ coctail }) {
-  console.log(coctail)
+export default function Home({ coctail, getDrink, getDrinkByName }) {
+  const searchQuerry = useRef();
+
+  const handleGetRandom = () => {
+    getDrink('http://localhost:8080/api/drink');
+  }
+
+  const handleSearchorDrink = () => {
+    getDrinkByName(searchQuerry.current.value)
+  }
+  
   return (
-    <section>
-      <article className="drinkContainer">
-        <img className="drinkImage" src={coctail.img} alt={coctail.name} />
-        <div>
-          <h3 className="drinkTitleWrapper">
-            <fieldset className="drinkTitleText">
-              <legend>Cocktail name:</legend>
-              <h4>{coctail.name}</h4>
-            </fieldset>
-          </h3>
-          <p>{coctail.instructions}</p>
-          <ul>
-           {coctail?.ingredients?.map(ingredient => (
-            <li>{ingredient}</li>
-           ))}
-          </ul>
-          <button>Save To Favourites</button>
-        </div>
-      </article>
-    </section>
+    <main className="homePageMain">
+      <button onClick={handleGetRandom} className="button">Get a Random Drink</button>
+      <input ref={searchQuerry} type="text" placeholder="search by name"></input>
+      <button onClick={handleSearchorDrink} className="button">Find</button>
+      <Drink coctail={coctail} />
+    </main>
   )
 }
