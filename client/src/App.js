@@ -42,30 +42,6 @@ function App() {
 
   const getDrinkByName = (name) => {
     getDrink(`http://localhost:8080/api/drink/${name}`)
-      .then(response => {
-        if(!response.ok) {
-          throw new Error('failed to fetch')
-        }
-        return response.json()
-      })
-      .then(drink => {
-        const ingredients = [];
-        for (const [key, value] of Object.entries(drink)) {
-          if (key.match(/strIngredient/) && value) {
-            ingredients.push(value);
-          }
-        }
-        const newDrink = {
-          id: drink.idDrink,
-          name: drink.strDrink,
-          instructions: drink.strInstructions,
-          img: drink.strDrinkThumb,
-          cathegory: drink.strCategory,
-          ingredients: ingredients
-        }
-        setCocktail(newDrink);
-      })
-      .catch(error => console.log(error));
   }
 
   return (

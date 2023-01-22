@@ -30,7 +30,6 @@ app.get('/api/drink/:name', async (req, res) => {
       throw new Error();
     }
     return res.json(response.data.drinks[0]);
-
   } catch (error) {
     return res.status(404).end();
   }
