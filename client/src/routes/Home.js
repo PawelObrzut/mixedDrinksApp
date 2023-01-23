@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 import { Link } from "react-router-dom";
 import Drink from '../components/Drink';
 
-export default function Home({ coctail, getDrink, getDrinkByName }) {
+export default function Home({ coctail, getDrink, getDrinkByName, addToFav }) {
   const searchQuerry = useRef();
 
   const handleGetRandom = () => {
@@ -24,7 +24,7 @@ export default function Home({ coctail, getDrink, getDrinkByName }) {
         
         <input ref={searchQuerry} type="text" className="searchField float-right" placeholder="search by name"></input>
       </section>
-      <Drink coctail={coctail} />
+      <Drink coctail={coctail} addToFav={addToFav} />
     </main>
   )
 }

@@ -52,11 +52,22 @@ function App() {
     getDrink(`http://localhost:8080/api/drink/${name}`)
   }
 
+  const addToFav = () => {
+    fetch('http://localhost:8080/api/favourites', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json',},
+      body: JSON.stringify(coctail),
+    })
+      .catch((error) => {
+        console.error('Error:', error);
+      });
+  }
+
   return (
     <>
       <h1 className="mainTitle">&gt;&gt;&gt; Show me the way to the next WhiskeyBar &lt;&lt;&lt; </h1>
       <Routes>
-        <Route path="/" element={<Home coctail={coctail} getDrink={getDrink} setCocktail={setCocktail} getDrinkByName={getDrinkByName} />}></Route>
+        <Route path="/" element={<Home coctail={coctail} getDrink={getDrink} setCocktail={setCocktail} getDrinkByName={getDrinkByName} addToFav={addToFav} />}></Route>
         <Route path="/favourites" element={<Favourites />}></Route>
       </Routes>
     </>
