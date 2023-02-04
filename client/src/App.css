@@ -7,6 +7,10 @@
   --white: #daede9;
 }
 
+/* .root {
+  min-width: 416px;
+} */
+
 body {
   background: linear-gradient(90deg, var(--black), var(--dark-green));
   color: var(--turquoise);
@@ -18,32 +22,24 @@ body {
   text-align: center;
   color: #fff;
   text-shadow:  0 0 0.25em rgb(197 253 242 / 75%), 0 0 0.125em #7ed4d4;
-}
-
-/* 
-* HomePage
-*/
-
-.console {
-  width:75%;
-  margin: auto;
+  margin: 2rem auto 1rem auto;
 }
 
 .homePageMain {
   text-align: center;
 }
 
+.navigation {
+  width: 95%;
+  margin: auto;
+}
+
 .button {
-  padding: 1rem;
+  padding: 0.5rem 1rem;
   background-color: var(--black);
   color: var(--turquoise);
   border: solid 0.1rem var(--white);
-  cursor: pointer;;
-}
-
-.button:hover {
-  text-shadow:  0 0 0.25em rgb(197 253 242 / 75%), 0 0 0.125em #7ed4d4;
-  text-decoration: underline;
+  cursor: pointer;
 }
 
 .float-left {
@@ -55,8 +51,57 @@ body {
 }
 
 .searchField {
-  height: 2.85rem;
-  font-size: 1.25rem;
-  padding-left: 1rem;
+  padding: 0.44rem;
+  font-size: 1rem;
+  max-width: 6rem;
   font-family: 'Ceviche One', cursive;
+}
+
+.button:hover {
+  text-shadow:  0 0 0.25em rgb(197 253 242 / 75%), 0 0 0.125em #7ed4d4;
+  text-decoration: underline;
+}
+
+.drinkContainer {
+  text-align: left;
+  width: 94%;
+  margin: 1rem auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  border: solid 0.25rem var(--turquoise);
+
+}
+
+/* .drinkContainer * {
+  border: solid 1px red;
+} */
+
+.drinkImage {
+  align-self: flex-start;
+  margin: 0.5rem;
+  width: 10rem;
+  height: 10rem;
+  border-radius: 50%;
+  border: solid 0.25rem var(--white);
+  object-fit: cover;
+}
+
+.drinkTitle {
+  margin: 0.5rem;
+  background-color: var(--black);
+  border-radius: 0.5rem;
+}
+
+.drinkTitleText {
+  border: dotted 0.2rem var(--turquoise);
+}
+
+.drinkTitleText h4 {
+  font-size: 2rem;
+  color: var(--white);
+}
+
+.drinkInstructions {
+  margin: 1rem;
 }

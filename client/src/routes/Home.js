@@ -17,8 +17,8 @@ export default function Home({ coctail, getDrink, getDrinkByName, addToFav }) {
   
   return (
     <main className="homePageMain">
-      <section className="console">
-        <Button className="button float-left" title="Get a Random Drink" action={handleGetRandom} />
+      <section className="navigation">
+        <Button className="button float-left" title="Random Drink" action={handleGetRandom} />
         <Link to="/favourites"><Button title="Favourites" className="button float-left"/></Link>
         <Button className="button float-right" title="Find" action={handleSearchorDrink} />
         <input ref={searchQuerry} type="text" className="searchField float-right" placeholder="search by name"></input>
