@@ -7,7 +7,7 @@ export default function Favourites() {
   const [favourites, setFavourites] = useState([]);
 
   const showFavourites = () => {
-    fetch('http://localhost:8080/api/favourites', { method: 'GET'})
+    fetch('https://cocktailapp-api.onrender.com/api/favourites', { method: 'GET'})
       .then(response => response.json())
       .then(favourites => {
         setFavourites(favourites);
@@ -15,7 +15,7 @@ export default function Favourites() {
   }
 
   const removeFav = id => {
-    fetch(`http://localhost:8080/api/favourites/${id}`, { method: 'DELETE' })
+    fetch(`https://cocktailapp-api.onrender.com/api/favourites/${id}`, { method: 'DELETE' })
       .then(response => response.json())
       .then(data => {
         showFavourites();

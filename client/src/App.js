@@ -45,15 +45,15 @@ function App() {
   }
 
   useEffect(() => {
-    getDrink('http://localhost:8080/api/drink');
+    getDrink('https://cocktailapp-api.onrender.com/api/drink');
   }, []);
 
   const getDrinkByName = (name) => {
-    getDrink(`http://localhost:8080/api/drink/${name}`)
+    getDrink(`https://cocktailapp-api.onrender.com/api/drink/${name}`)
   }
 
   const addToFav = () => {
-    fetch('http://localhost:8080/api/favourites', {
+    fetch('https://cocktailapp-api.onrender.com/api/favourites', {
       method: 'POST',
       headers: {'Content-Type': 'application/json',},
       body: JSON.stringify(coctail),
