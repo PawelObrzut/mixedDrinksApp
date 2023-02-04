@@ -7,7 +7,7 @@ export default function Home({ coctail, getDrink, getDrinkByName, addToFav }) {
   const searchQuerry = useRef();
 
   const handleGetRandom = () => {
-    getDrink('http://localhost:8080/api/drink');
+    getDrink('https://cocktailapp-api.onrender.com/api/drink');
   }
 
   const handleSearchorDrink = () => {
