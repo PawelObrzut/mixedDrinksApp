@@ -12,25 +12,26 @@ const Drink = ({ coctail, addToFav, removeFav }) => {
   }
 
   return (
-    <article className="drinkContainer">
-      <img className="drinkImage" src={coctail.img} alt={coctail.name} />  
-      <h3 className='drinkTitle'>
-        <fieldset className="drinkTitleText">
-          <legend>Cocktail name:</legend>
-          <h4>{coctail.name}</h4>
-        </fieldset>
-      </h3>
+    <article className="drink">
 
-      <div className="drinkInstructions">
-        <p className="extraFont instructions">{coctail.instructions}</p>
-        <div>
-          <ul className="extraFont float-left">
-          {coctail?.ingredients?.map(ingredient => <li key={ingredient}>{ingredient}</li>)}
-          </ul>
+        <img className="drinkImage" src={coctail.img} alt={coctail.name} />  
+        <section className="drinkTitle">
+          <fieldset className="drinkFieldset">
+            <legend>Cocktail name:</legend>
+            <h2>{coctail.name}</h2>
+          </fieldset>
+        </section>
+
+        <p className="drinkInstructions">{coctail.instructions}</p>
+
+        <ul className="drinkIngredients">
+        {coctail?.ingredients?.map(ingredient => <li key={ingredient}>{ingredient}</li>)}
+        </ul>
+        <div className="btnGrid">
           { pathname.includes('favourites') && <Button title="Delete" action={handleDelete} className="button float-right"/>}
           { pathname === '/' && coctail.success && <Button title="Save To Favourites" action={handleAddToFav} className="button float-right"/> }
         </div>
-      </div>
+
     </article>
   )
 };

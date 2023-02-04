@@ -7,10 +7,6 @@
   --white: #daede9;
 }
 
-/* .root {
-  min-width: 416px;
-} */
-
 body {
   background: linear-gradient(90deg, var(--black), var(--dark-green));
   color: var(--turquoise);
@@ -27,11 +23,6 @@ body {
 
 .homePageMain {
   text-align: center;
-}
-
-.navigation {
-  width: 95%;
-  margin: auto;
 }
 
 .button {
@@ -62,46 +53,44 @@ body {
   text-decoration: underline;
 }
 
-.drinkContainer {
-  text-align: left;
-  width: 94%;
-  margin: 1rem auto;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  border: solid 0.25rem var(--turquoise);
-
+.navigation {
+  height: 2.5rem;
 }
 
-/* .drinkContainer * {
-  border: solid 1px red;
-} */
+.drink {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border: solid 0.25rem var(--turquoise)
+}
 
 .drinkImage {
-  align-self: flex-start;
-  margin: 0.5rem;
-  width: 10rem;
-  height: 10rem;
+  object-fit: cover;
+  width: 12.5rem;
+  height: 12.5rem;
   border-radius: 50%;
   border: solid 0.25rem var(--white);
-  object-fit: cover;
+  margin: 0.5rem;
 }
 
 .drinkTitle {
+  grid-column: 2 / 4;
   margin: 0.5rem;
+}
+
+.drinkFieldset {
+  border: dotted 0.1rem var(--turquoise);
   background-color: var(--black);
-  border-radius: 0.5rem;
-}
-
-.drinkTitleText {
-  border: dotted 0.2rem var(--turquoise);
-}
-
-.drinkTitleText h4 {
-  font-size: 2rem;
-  color: var(--white);
 }
 
 .drinkInstructions {
-  margin: 1rem;
+  grid-column: 1 / 4;
+}
+
+.drinkIngredients {
+  text-align: left;
+}
+
+.btnGrid {
+  padding: 3rem;
+  grid-column: 2 / 4;
 }
