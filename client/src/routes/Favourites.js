@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from "react-router-dom";
 import Drink from '../components/Drink';
+import Button from '../components/Button';
 
 export default function Favourites() {
   const [favourites, setFavourites] = useState([]);
@@ -20,7 +21,7 @@ export default function Favourites() {
   return (
     <main>
       <section className="console">
-        <Link to="/"><button className="button float-right">Home</button></Link>
+        <Link to="/"><Button title="Home" className="button float-right" /></Link>
       </section>
       <ul>
         { favourites.map(coctail => (

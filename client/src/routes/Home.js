@@ -1,6 +1,7 @@
 import React, { useRef } from 'react';
 import { Link } from "react-router-dom";
 import Drink from '../components/Drink';
+import Button from '../components/Button';
 
 export default function Home({ coctail, getDrink, getDrinkByName, addToFav }) {
   const searchQuerry = useRef();
@@ -17,11 +18,9 @@ export default function Home({ coctail, getDrink, getDrinkByName, addToFav }) {
   return (
     <main className="homePageMain">
       <section className="console">
-        <button onClick={handleGetRandom} className="button float-left">Get a Random Drink</button>
-        <Link to="/favourites"><button className="button float-left">Favourites</button></Link>
-        
-        <button onClick={handleSearchorDrink} className="button float-right">Find</button>
-        
+        <Button className="button float-left" title="Get a Random Drink" action={handleGetRandom} />
+        <Link to="/favourites"><Button title="Favourites" className="button float-left"/></Link>
+        <Button className="button float-right" title="Find" action={handleSearchorDrink} />
         <input ref={searchQuerry} type="text" className="searchField float-right" placeholder="search by name"></input>
       </section>
       <Drink coctail={coctail} addToFav={addToFav} />
