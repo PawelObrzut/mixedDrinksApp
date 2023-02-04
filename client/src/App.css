@@ -23,6 +23,7 @@ body {
 
 .homePageMain {
   text-align: center;
+  margin-bottom: 3rem;
 }
 
 .button {
@@ -84,13 +85,66 @@ body {
 
 .drinkInstructions {
   grid-column: 1 / 4;
+  padding: 0 1rem;
 }
 
 .drinkIngredients {
   text-align: left;
+  padding-left: 4rem;
+  margin-bottom: 2rem;
 }
 
 .btnGrid {
   padding: 3rem;
   grid-column: 2 / 4;
+}
+
+.favouritesList {
+  list-style: none;
+  padding: 0;
+}
+
+@media only screen and (min-width: 550px) {
+  .root {
+    width: 95%;
+    margin: 0 auto;
+  }
+  .button {
+    font-size: 1rem;
+    padding: 0.5rem 1.5rem;
+  }
+  .searchField {
+    font-size: 1.2rem;
+    max-width: 8.5rem;
+  }
+  .drinkImage {
+    width: 15rem;
+    height: 15rem;
+    margin: 1rem;
+  }
+  .drinkFieldset {
+    font-size: 1.5rem;
+  }
+  .drinkTitle {
+    font-size: 1.5rem;
+  }
+  .drinkInstructions {
+    font-size: 1.5rem;
+    padding: 0 1.5rem;
+  }
+  .drinkIngredients {
+    font-size: 1.5rem;
+    padding-left: 6rem;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  .root {
+    width: 70%;
+  }
+  .drinkImage {
+    width: 17rem;
+    height: 17rem;
+    margin: 2rem;
+  }
 }

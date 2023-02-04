@@ -27,11 +27,11 @@ export default function Favourites() {
   }, []);
 
   return (
-    <main>
-      <section className="console">
+    <main className="homePageMain">
+      <section className="navigation">
         <Link to="/"><Button title="Home" className="button float-right" /></Link>
       </section>
-      <ul>
+      <ul className="favouritesList">
         { favourites.map(coctail => (
           <Drink coctail={coctail} key={coctail.id} removeFav={removeFav} />
         ))}

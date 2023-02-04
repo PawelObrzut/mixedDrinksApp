@@ -64,13 +64,13 @@ function App() {
   }
 
   return (
-    <>
+    <div className="root">
       <h1 className="mainTitle">&gt;&gt;&gt;WhiskeyBar &lt;&lt;&lt; </h1>
       <Routes>
         <Route path="/" element={<Home coctail={coctail} getDrink={getDrink} setCocktail={setCocktail} getDrinkByName={getDrinkByName} addToFav={addToFav} />}></Route>
         <Route path="/favourites" element={<Favourites />}></Route>
       </Routes>
-    </>
+    </div>
   );
 }
 
