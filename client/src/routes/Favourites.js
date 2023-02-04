@@ -14,6 +14,14 @@ export default function Favourites() {
     });
   }
 
+  const removeFav = id => {
+    fetch(`http://localhost:8080/api/favourites/${id}`, { method: 'DELETE' })
+      .then(response => response.json())
+      .then(data => {
+        showFavourites();
+      })
+  }
+
   useEffect(() => {
     showFavourites()
   }, []);
@@ -25,7 +33,7 @@ export default function Favourites() {
       </section>
       <ul>
         { favourites.map(coctail => (
-          <Drink coctail={coctail} key={coctail.id} />
+          <Drink coctail={coctail} key={coctail.id} removeFav={removeFav} />
         ))}
       </ul>
     </main>
