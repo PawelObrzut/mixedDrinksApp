@@ -2,15 +2,19 @@ import React, { useEffect, useState } from 'react';
 import { Link } from "react-router-dom";
 import Drink from '../components/Drink';
 import Button from '../components/Button';
+import Spinner from '../components/Spinner';
 
 export default function Favourites() {
   const [favourites, setFavourites] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   const showFavourites = () => {
+    setLoading(true)
     fetch('https://cocktailapp-api.onrender.com/api/favourites', { method: 'GET'})
       .then(response => response.json())
       .then(favourites => {
         setFavourites(favourites);
+        setLoading(false)
     });
   }
 
@@ -25,6 +29,17 @@ export default function Favourites() {
   useEffect(() => {
     showFavourites()
   }, []);
+
+  if (loading) {
+    return (
+      <main className="homePageMain">
+        <article>
+          <Spinner/>
+          <h2>Loading...</h2>
+        </article>
+      </main>
+    )
+  }
 
   return (
     <main className="homePageMain">

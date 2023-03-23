@@ -1,14 +1,24 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
 import Button from './Button';
+import Spinner from './Spinner';
 
-const Drink = ({ coctail, addToFav, removeFav }) => {
+const Drink = ({ loading, coctail, addToFav, removeFav }) => {
   const { pathname } = useLocation();
   const handleAddToFav = () => {
     addToFav()
   }
   const handleDelete = () => {
     removeFav(coctail.id)
+  }
+
+  if (loading) {
+    return (
+      <article>
+        <Spinner/>
+        <h2>Loading...</h2>
+      </article>
+    )
   }
 
   return (

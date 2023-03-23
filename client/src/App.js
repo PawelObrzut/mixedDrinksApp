@@ -7,8 +7,10 @@ import Home from './routes/Home';
 
 function App() {
   const [coctail, setCocktail] = useState({});
+  const [loading, setLoading] = useState(false);
 
   const getDrink = (url) => {
+    setLoading(true)
     fetch(url, { method: 'GET'})
       .then(response => {
         if(!response.ok) {
@@ -33,6 +35,7 @@ function App() {
           ingredients: [...uniqueIngredients],
           success: true
         }
+        setLoading(false)
         setCocktail(newDrink);
       })
       .catch(_error => {
@@ -53,11 +56,15 @@ function App() {
   }
 
   const addToFav = () => {
+    setLoading(true)
     fetch('https://cocktailapp-api.onrender.com/api/favourites', {
       method: 'POST',
       headers: {'Content-Type': 'application/json',},
       body: JSON.stringify(coctail),
     })
+      .then(() => {
+        setLoading(false)
+      })
       .catch((error) => {
         console.error('Error:', error);
       });
@@ -67,7 +74,7 @@ function App() {
     <div className="root">
       <h1 className="mainTitle">&gt;&gt;&gt;WhiskeyBar &lt;&lt;&lt; </h1>
       <Routes>
-        <Route path="/" element={<Home coctail={coctail} getDrink={getDrink} setCocktail={setCocktail} getDrinkByName={getDrinkByName} addToFav={addToFav} />}></Route>
+        <Route path="/" element={<Home coctail={coctail} loading={loading} getDrink={getDrink} setCocktail={setCocktail} getDrinkByName={getDrinkByName} addToFav={addToFav} />}></Route>
         <Route path="/favourites" element={<Favourites />}></Route>
       </Routes>
     </div>
