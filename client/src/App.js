@@ -3,7 +3,8 @@ import { Routes, Route } from "react-router-dom";
 import './App.css';
 import Favourites from './routes/Favourites';
 import Home from './routes/Home';
-
+import apiUrl from './apiUrl';
+import errorImage from './404.png';
 
 function App() {
   const [coctail, setCocktail] = useState({});
@@ -35,29 +36,30 @@ function App() {
           ingredients: [...uniqueIngredients],
           success: true
         }
-        setLoading(false)
+        setLoading(false);
         setCocktail(newDrink);
       })
       .catch(_error => {
         setCocktail({
           name: "Cocktail not found",
-          img: "https://media.licdn.com/dms/image/C5612AQEPYce5KpNLyg/article-cover_image-shrink_720_1280/0/1551659700811?e=1678924800&v=beta&t=SwwpRDk2nez4mC4oBDGXdf8AtJhmu7ljFDj4i7dKtTs",
+          img: errorImage,
           success: false
         })
+        setLoading(false);
       });
   }
 
   useEffect(() => {
-    getDrink('https://cocktailapp-api.onrender.com/api/drink');
+    getDrink(`${apiUrl}/api/drink`);
   }, []);
 
   const getDrinkByName = (name) => {
-    getDrink(`https://cocktailapp-api.onrender.com/api/drink/${name}`)
+    getDrink(`${apiUrl}/api/drink/${name}`)
   }
 
   const addToFav = () => {
     setLoading(true)
-    fetch('https://cocktailapp-api.onrender.com/api/favourites', {
+    fetch(`${apiUrl}/api/favourites`, {
       method: 'POST',
       headers: {'Content-Type': 'application/json',},
       body: JSON.stringify(coctail),

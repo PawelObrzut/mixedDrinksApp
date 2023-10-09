@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Drink from '../components/Drink';
 import Button from '../components/Button';
 import Spinner from '../components/Spinner';
+import apiUrl from '../apiUrl';
 
 export default function Favourites() {
   const [favourites, setFavourites] = useState([]);
@@ -10,7 +11,7 @@ export default function Favourites() {
 
   const showFavourites = () => {
     setLoading(true)
-    fetch('https://cocktailapp-api.onrender.com/api/favourites', { method: 'GET'})
+    fetch(`${apiUrl}/api/favourites`, { method: 'GET'})
       .then(response => response.json())
       .then(favourites => {
         setFavourites(favourites);
@@ -19,7 +20,7 @@ export default function Favourites() {
   }
 
   const removeFav = id => {
-    fetch(`https://cocktailapp-api.onrender.com/api/favourites/${id}`, { method: 'DELETE' })
+    fetch(`${apiUrl}/api/favourites/${id}`, { method: 'DELETE' })
       .then(response => response.json())
       .then(data => {
         showFavourites();

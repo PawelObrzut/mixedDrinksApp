@@ -2,12 +2,13 @@ import React, { useRef } from 'react';
 import { Link } from "react-router-dom";
 import Drink from '../components/Drink';
 import Button from '../components/Button';
+import apiUrl from '../apiUrl';
 
 export default function Home({ coctail, loading, getDrink, getDrinkByName, addToFav }) {
   const searchQuerry = useRef();
 
   const handleGetRandom = () => {
-    getDrink('https://cocktailapp-api.onrender.com/api/drink');
+    getDrink(`${apiUrl}/api/drink`);
   }
 
   const handleSearchorDrink = () => {
